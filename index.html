@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <div id="navbar">
+        <span style="color: white; font-size: larger">E-Shop</span>
+        <a href="">home</a>
+        <a href="">Product</a>
+        <a href="">Cart</a>
+      </div>
+    </header>
+
+    <main
+      id="main"
+      style="
+        display: grid;
+        row-gap: 10px;
+        grid-template-columns: repeat(5, 1fr);
+      "
+    ></main>
+    <h1>Create a New Post</h1>
+    <form id="postForm">
+        <label for="userName">user name:</label>
+        <input type="text" id="userName" name="userName" required><br><br>
+        
+
+        <label for="content">content:</label>
+        <textarea id="content" name="content" rows="4" required></textarea><br><br>
+
+
+       <button type="submit">Create Post</button>
+    </form>
+    
+    <div id="posts"></div>
+
+    <div id="response"></div>
+
+    
+
+    </div>
+
+    <footer></footer>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "Post": [
+    {
+      "id": 1,
+      "userName": "abdullah",
+      "content": "hello world"
+    },
+    {
+      "id": 2,
+      "userName": "jafar",
+      "content": "how are you"
+    },
+    {
+      "id": 3,
+      "userName": "ahmad",
+      "content": "fine"
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    }
+  ]
+}

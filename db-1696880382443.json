@@ -1,0 +1,16 @@
+{
+  "Post": [
+    {
+      "id": 1,
+      "content": "hello world"
+    },
+    {
+      "id": 2,
+      "content": "how are you"
+    },
+    {
+      "id": 3,
+      "content": "i'm fine"
+    }
+  ]
+}
