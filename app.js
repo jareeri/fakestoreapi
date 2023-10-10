@@ -180,6 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <p>UserName: ${post.userName}</p>
           <p>Content: ${post.content}</p>
           <button onclick="deleteContent(${post.id})">Delet</button>
+          <button onclick="editContent(${post.id})">edit</button>
         </div>`;
 
 
@@ -249,5 +250,26 @@ function deleteContent(postid) {
     .catch(error => {
       console.error('Error deleting product:', error);
     });
+}
+
+function editContent(postid) {
+  const editedPost =prompt("Updet the post ", "")
+  if(editedPost !== null){
+  fetch(`http://localhost:3000/post/${postid}`, {
+    method: 'put',
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body:JSON.stringify({content : editedPost}),
+  })
+    .then(response => {
+      console.log('post deleted. Response status:', response.status);
+
+      // postsArray = postsArray.filter(post => post.id !== postId);
+
+    })
+    .catch(error => {
+      console.error('Error deleting product:', error);
+    })};
 }
 
