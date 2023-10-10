@@ -179,7 +179,10 @@ document.addEventListener("DOMContentLoaded", function () {
         <div>
           <p>UserName: ${post.userName}</p>
           <p>Content: ${post.content}</p>
+          <button onclick="deleteContent(${post.id})">Delet</button>
         </div>`;
+
+
     postDiv.style.backgroundColor = "gray";
     postDiv.style.color = "white";
     postDiv.style.borderRadius = "25px";
@@ -188,16 +191,22 @@ document.addEventListener("DOMContentLoaded", function () {
     postDiv.style.border = "1px solid black";
     return postDiv;
   }
-
+ 
+  
   // Event listener for form submission
   postForm.addEventListener("submit", function (e) {
     e.preventDefault();
     const formData = new FormData(postForm);
-
+    
     fetch("http://localhost:3000/post", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(Object.fromEntries(formData)),
     })
+
+    
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -207,17 +216,38 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((data) => {
         const newPost = new Post(data.id, data.userName, data.content);
         postsArray.push(newPost);
-
+        
         responseDiv.innerHTML = `New post created:<br> 
             Title: ${data.userName}<br>
             Body: ${data.content}`;
+            
       })
       .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
       });
   });
-
+  
+  
+  
+  
   // Fetch and display all posts when the page loads
   fetchAllPosts();
   console.log(postsArray);
 });
+
+function deleteContent(postid) {
+  fetch(`http://localhost:3000/post/${postid}`, {
+    method: 'DELETE',
+  })
+    .then(response => {
+      console.log('post deleted. Response status:', response.status);
+
+      // postsArray = postsArray.filter(post => post.id !== postId);
+
+
+    })
+    .catch(error => {
+      console.error('Error deleting product:', error);
+    });
+}
+

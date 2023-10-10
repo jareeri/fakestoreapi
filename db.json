@@ -1,16 +1,6 @@
 {
   "Post": [
     {
-      "id": 1,
-      "userName": "abdullah",
-      "content": "hello world"
-    },
-    {
-      "id": 2,
-      "userName": "jafar",
-      "content": "how are you"
-    },
-    {
       "id": 3,
       "userName": "ahmad",
       "content": "fine"
@@ -20,6 +10,21 @@
     },
     {
       "id": 5
+    },
+    {
+      "userName": "2",
+      "content": "s",
+      "id": 6
+    },
+    {
+      "userName": "abdijareeri",
+      "content": "hi how are you and can i get your number\n",
+      "id": 7
+    },
+    {
+      "userName": "2",
+      "content": "123",
+      "id": 8
     }
   ]
 }
